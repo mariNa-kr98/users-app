@@ -29,6 +29,9 @@
 //     transports: [new transports.Console()]
 // })
 
+//For jest tests
+// require('dotenv').config();
+
 //Third example (also creates the file "logs")
 require('winston-daily-rotate-file');
 require('winston-mongodb');
