@@ -6,6 +6,11 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
+app.use(cors({
+    // origin: '*'
+    origin: ['http://localhost:4200']
+}))
+
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
@@ -15,10 +20,6 @@ const swaggerDocument = require('./swagger');
 const user = require('./routes/user.routes');
 const userProduct = require('./routes/user.products.routes');
 const auth = require('./routes/auth.routes');
-
-app.use(cors({
-    origin: ['http://localhost:3000']
-}))
 
 app.use('/api/users', user);
 app.use('/api/user-product', userProduct);
