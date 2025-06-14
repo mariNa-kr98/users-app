@@ -14,7 +14,7 @@ function verifyToken(req, res, next) {
     //const secret = process.env.TOKEN_SECRET;
     const result = authService.verifyAccessToken(token);
 
-    if(!result.verified){
+    if(result.verified){
         req.user = result.data;
        // console.log("REQ 2>>>>", req);
         next();
